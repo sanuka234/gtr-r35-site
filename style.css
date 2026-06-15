@@ -247,3 +247,57 @@ footer {
         font-size: 2.3rem;
     }
 }
+/* ==========================================
+   MOBILE RESPONSIVE STYLES (For Phones)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Make the container padding slightly smaller on phones */
+    .container {
+        width: 92%;
+        padding: 10px 0;
+    }
+
+    /* 2. Turn the horizontal navigation links into a neat column */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        display: inline-block;
+    }
+
+    /* 3. Shrink the huge hero text so it doesn't spill over */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* 4. Force the side-by-side feature cards to stack vertically */
+    .features-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .card-img {
+        height: 200px; /* slightly shorter images for phone screens */
+    }
+
+    /* 5. Force the Skyline Heritage text and image to stack vertically */
+    .alignment-block {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+    
+    /* Ensure the text section drops a bit of space below it */
+    .text-block h2 {
+        font-size: 1.8rem;
+    }
+}
