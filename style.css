@@ -697,3 +697,49 @@ nav a {
     border-radius: 4px;
     background: rgba(0, 0, 0, 0.8);
 }
+/* --- Mobile Responsive Fixes (For Phones) --- */
+@media screen and (max-width: 768px) {
+    /* 1. Force main layout blocks to take full width */
+    .container, 
+    .section, 
+    .supra-hero, 
+    .legacy-layout, 
+    .unique-banner-block,
+    main {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Fix the hero section overlay and centering */
+    .hero-overlay {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        text-align: center !important;
+    }
+
+    .hero-banner h1 {
+        font-size: 1.8rem !important; /* Slightly smaller text for mobile headers */
+        line-height: 1.3 !important;
+    }
+
+    /* 3. Convert grids (like your engineering cards) into a single column layout */
+    .legacy-grid, 
+    .garage-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 25px !important;
+    }
+
+    /* 4. Ensure images and videos stretch beautifully without breaking */
+    .legacy-image-box img,
+    .legacy-image-box video,
+    .card-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+    }
+}
