@@ -734,12 +734,23 @@ nav a {
         gap: 25px !important;
     }
 
-    /* 4. Ensure images and videos stretch beautifully without breaking */
-    .legacy-image-box img,
-    .legacy-image-box video,
-    .card-image img {
+   /* 4. Ensure images stretch beautifully and stay a uniform, readable size */
+    .card-image,
+    .legacy-image-box,
+    .car-card .card-image {
         width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
+        height: 250px !important; /* Forces all image containers to have the exact same height */
+        overflow: hidden !important;
+        position: relative !important;
+        border-radius: 8px !important;
+    }
+
+    .card-image img,
+    .legacy-image-box img,
+    .legacy-image-box video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* The secret weapon: cuts off edges perfectly without squishing the car */
+        object-position: center !important; /* Keeps the car focused in the dead center */
     }
 }
