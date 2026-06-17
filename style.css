@@ -734,23 +734,41 @@ nav a {
         gap: 25px !important;
     }
 
-   /* 4. Ensure images stretch beautifully and stay a uniform, readable size */
-    .card-image,
+   /* 4. Ultimate sizing constraints for all mobile media */
+    
+    /* Target the container frames holding any section pictures */
     .legacy-image-box,
-    .car-card .card-image {
+    .card-image,
+    .car-card .card-image,
+    div[class*="image"],
+    section img {
         width: 100% !important;
-        height: 250px !important; /* Forces all image containers to have the exact same height */
+        max-width: 100% !important;
+        height: 240px !important; /* Locks all images into an identical height */
         overflow: hidden !important;
         position: relative !important;
         border-radius: 8px !important;
+        margin-bottom: 12px !important;
     }
 
-    .card-image img,
+    /* Target the raw img/video elements inside those frames */
     .legacy-image-box img,
-    .legacy-image-box video {
+    .legacy-image-box video,
+    .card-image img,
+    div[class*="image"] img,
+    section img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important; /* The secret weapon: cuts off edges perfectly without squishing the car */
-        object-position: center !important; /* Keeps the car focused in the dead center */
+        max-height: 240px !important;
+        object-fit: cover !important; /* Intelligently crops without squishing elements */
+        object-position: center !important; /* Centers the focal vehicle point */
+    }
+
+    /* 5. Fix for Stats Table squishing on phone screens */
+    table, .stats-table, [class*="table"] {
+        width: 100% !important;
+        display: table !important;
+        box-sizing: border-box !important;
+        font-size: 0.85rem !important; /* Slightly sizes down text to prevent text-wrapping layout breaks */
     }
 }
